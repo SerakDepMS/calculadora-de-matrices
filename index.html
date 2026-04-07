@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Sumador de Matrices</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Sumador de Matrices</h1>
+    </header>
+
+    <div class="control-bar">
+      <div class="dimension-controls">
+        <div class="input-field">
+          <label>Filas</label>
+          <input type="number" id="rowsInput" min="1" max="6" value="2" step="1">
+        </div>
+        <div class="input-field">
+          <label>Columnas</label>
+          <input type="number" id="colsInput" min="1" max="6" value="2" step="1">
+        </div>
+        <button id="resizeBtn" class="btn secondary">Redimensionar</button>
+      </div>
+
+      <div class="matrix-actions">
+        <button id="addMatrixBtn" class="btn primary">Añadir matriz</button>
+        <button id="removeMatrixBtn" class="btn outline">Quitar última</button>
+        <button id="resetAllBtn" class="btn danger">Poner a cero</button>
+      </div>
+    </div>
+
+    <div class="matrices-panel">
+      <h2>Matrices activas</h2>
+      <div id="matricesContainer" class="matrices-grid">
+
+      </div>
+    </div>
+
+    <div class="result-panel">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <h2>Suma Total de la Matriz </h2>
+        <button id="sumarBtn" class="btn primary" style="background: #16a34a; box-shadow: 0 1px 2px rgba(0,0,0,0.1);">SUMAR MATRICES</button>
+      </div>
+      <div id="sumResultArea" class="result-card">
+        <div class="info-message">resultado</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
