@@ -31,16 +31,6 @@ Este es un proyecto educativo desarrollado con **HTML, CSS y JavaScript puro**. 
 - **CSS3**: Estilos, Flexbox, diseño responsive con media queries.
 - **JavaScript (ES6)**: Lógica de matrices, manejo del DOM, eventos, conversión de números (coma a punto) y cálculo de suma.
 
-## 📁 Estructura del proyecto
-
-
-/
-├── index.html      # Estructura principal de la página
-├── styles.css      # Estilos visuales y responsive
-├── script.js       # Lógica completa de la aplicación
-└── LICENSE         # Licencia MIT
-
-
 ## 📄 Licencia
 
 Este proyecto está bajo la licencia **MIT**. Consulta el archivo `LICENSE` para más detalles.
