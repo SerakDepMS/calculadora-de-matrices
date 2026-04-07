@@ -1,3 +1,4 @@
+```markdown
 # Sumador de Matrices - Proyecto Básico de Programación Web
 
 Este es un proyecto educativo desarrollado con **HTML, CSS y JavaScript puro**. Permite crear múltiples matrices de igual dimensión, editar sus celdas (admitiendo números negativos, decimales con punto o coma, y valores grandes) y calcular la suma total de todas las matrices **solo al presionar un botón**.
@@ -32,3 +33,25 @@ Este es un proyecto educativo desarrollado con **HTML, CSS y JavaScript puro**. 
 - **JavaScript (ES6)**: Lógica de matrices, manejo del DOM, eventos, conversión de números (coma a punto) y cálculo de suma.
 
 ## 📁 Estructura del proyecto
+
+```
+/
+├── index.html      # Estructura principal de la página
+├── styles.css      # Estilos visuales y responsive
+├── script.js       # Lógica completa de la aplicación
+└── LICENSE         # Licencia MIT
+```
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia **MIT**. Consulta el archivo `LICENSE` para más detalles.
+
+## 👤 Autor
+
+**D3B1A2C4F5E67890**  
+Proyecto desarrollado con fines educativos para demostrar conceptos básicos de programación web: manipulación del DOM, eventos, arrays bidimensionales y diseño responsive.
+
+---
+
+✨ *Disfruta sumando matrices de forma sencilla y profesional.*
+```
