@@ -1,55 +1,149 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Sumador de Matrices</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Matrices</title>
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <link rel="manifest" href="favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="app-container">
-    <header>
-      <h1>Sumador de Matrices</h1>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <h3 id="modalTitle">Agregar Matriz</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <label for="modalRows">Filas</label>
+                    <input type="number" id="modalRows" min="1" max="10" value="2" placeholder="Número de filas">
+                </div>
+                <div class="input-group">
+                    <label for="modalCols">Columnas</label>
+                    <input type="number" id="modalCols" min="1" max="10" value="2" placeholder="Número de columnas">
+                </div>
+                <p class="modal-hint">Dimensiones: de 1×1 hasta 10×10</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="modalCancel">Cancelar</button>
+                <button class="btn btn-primary" id="modalConfirm">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <header class="header">
+    <div class="header-content">
+        <div class="header-icon">
+            <img src="image/SerakDepMS.png" alt="Logo" width="28" height="28" style="display:block;">
+        </div>
+        <h1>Calculadora de Matrices</h1>
+    </div>
     </header>
 
-    <div class="control-bar">
-      <div class="dimension-controls">
-        <div class="input-field">
-          <label>Filas</label>
-          <input type="number" id="rowsInput" min="1" max="6" value="2" step="1">
-        </div>
-        <div class="input-field">
-          <label>Columnas</label>
-          <input type="number" id="colsInput" min="1" max="6" value="2" step="1">
-        </div>
-        <button id="resizeBtn" class="btn secondary">Redimensionar</button>
-      </div>
 
-      <div class="matrix-actions">
-        <button id="addMatrixBtn" class="btn primary">Añadir matriz</button>
-        <button id="removeMatrixBtn" class="btn outline">Quitar última</button>
-        <button id="resetAllBtn" class="btn danger">Poner a cero</button>
-      </div>
-    </div>
 
-    <div class="matrices-panel">
-      <h2>Matrices activas</h2>
-      <div id="matricesContainer" class="matrices-grid">
+    <main class="main-container">
 
-      </div>
-    </div>
+        <section class="toolbar">
+            <button class="btn btn-primary btn-add-matrix" id="btnAddMatrix">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                    <line x1="12" y1="5" x2="12" y2="19"/>
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+                Agregar Matriz
+            </button>
+            <span class="toolbar-info" id="toolbarInfo">No hay matrices creadas</span>
+        </section>
 
-    <div class="result-panel">
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-        <h2>Suma Total de la Matriz </h2>
-        <button id="sumarBtn" class="btn primary" style="background: #16a34a; box-shadow: 0 1px 2px rgba(0,0,0,0.1);">SUMAR MATRICES</button>
-      </div>
-      <div id="sumResultArea" class="result-card">
-        <div class="info-message">resultado</div>
-      </div>
-    </div>
-  </div>
 
-  <script src="script.js"></script>
+        <section class="matrices-area" id="matricesArea">
+            <div class="empty-state" id="emptyState">
+                <p>No hay matrices aún</p>
+                <span>Haz clic en <strong>"Agregar Matriz"</strong> para crear una nueva matriz con las dimensiones que necesites.</span>
+            </div>
+        </section>
+
+
+        <section class="operations-panel" id="operationsPanel">
+            <h2 class="panel-title">Operaciones</h2>
+            <div class="operations-grid">
+                <div class="op-field">
+                    <label for="opType">Tipo de Operación</label>
+                    <select id="opType" class="select-styled">
+                        <option value="add">Suma (A + B)</option>
+                        <option value="subtract">Resta (A − B)</option>
+                        <option value="multiply">Multiplicación (A × B)</option>
+                        <option value="scalar">Multiplicación por Escalar (k × A)</option>
+                        <option value="transpose">Transpuesta (Aᵀ)</option>
+                        <option value="determinant">Determinante |A|</option>
+                        <option value="inverse">Inversa (A⁻¹)</option>
+                    </select>
+                </div>
+                <div class="op-field" id="fieldMatrixA">
+                    <label for="selectMatrixA">Matriz A</label>
+                    <select id="selectMatrixA" class="select-styled">
+                        <option value="">-- Seleccionar --</option>
+                    </select>
+                </div>
+                <div class="op-field" id="fieldMatrixB" style="display:none;">
+                    <label for="selectMatrixB">Matriz B</label>
+                    <select id="selectMatrixB" class="select-styled">
+                        <option value="">-- Seleccionar --</option>
+                    </select>
+                </div>
+                <div class="op-field" id="fieldScalar" style="display:none;">
+                    <label for="inputScalar">Escalar (k)</label>
+                    <input type="number" id="inputScalar" class="input-styled" value="1" step="any" placeholder="Valor del escalar">
+                </div>
+                <div class="op-field op-field-btn">
+                    <button class="btn btn-primary btn-calculate" id="btnCalculate">Calcular</button>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="result-panel" id="resultPanel" style="display:none;">
+            <div class="result-header">
+                <h2 class="panel-title">Resultado</h2>
+                <div class="result-actions">
+                    <button class="btn btn-sm btn-outline" id="btnSaveResult" title="Guardar resultado como nueva matriz">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                            <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/>
+                            <polyline points="17 21 17 13 7 13 7 21"/>
+                            <polyline points="7 3 7 8 15 8"/>
+                        </svg>
+                        Guardar
+                    </button>
+                    <button class="btn btn-sm btn-outline btn-close-result" id="btnCloseResult" title="Cerrar resultado">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                            <line x1="18" y1="6" x2="6" y2="18"/>
+                            <line x1="6" y1="6" x2="18" y2="18"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="result-content" id="resultContent">
+
+            </div>
+            <div class="result-footer" id="resultFooter"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <span>SerakDepMS &copy; 2026</span>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

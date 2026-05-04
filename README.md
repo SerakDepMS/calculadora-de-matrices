@@ -1,46 +1,53 @@
-# Sumador de Matrices
+# Calculadora de Matrices Avanzada
 
-Este es un proyecto educativo desarrollado con **HTML, CSS y JavaScript puro**. Permite crear múltiples matrices de igual dimensión, editar sus celdas (admitiendo números negativos, decimales con punto o coma, y valores grandes) y calcular la suma total de todas las matrices **solo al presionar un botón**.
+![Logo SerakDepMS](image/SerakDepMS.png)
 
-## 🧩 Funcionalidades
+Aplicación web desarrollada con **HTML, CSS y JavaScript puro**. Permite agregar múltiples matrices con dimensiones personalizadas, editar sus valores en tiempo real y realizar las operaciones más importantes del álgebra lineal. Incluye un diseño responsive, iconos personalizados y una interfaz moderna sin dependencias externas.
 
-- Definir dinámicamente el número de filas y columnas (de 1 a 8).
-- Agregar o eliminar matrices.
-- Editar cualquier celda de cualquier matriz.
-- Soporte completo para:
-  - Números negativos (`-5.3`)
-  - Decimales con punto o coma (`2.5` o `2,5`)
-  - Números grandes (`1000000`) o pequeños (`0.0001`)
-- Calcular la matriz suma acumulada únicamente mediante el botón **"SUMAR MATRICES"**.
-- Diseño **responsive** que se adapta a móviles, tablets y escritorio.
-- Interfaz profesional, limpia y sin dependencias externas.
+## Funcionalidades principales
 
-## 🚀 Cómo usar
+- **Agregar matrices dinámicamente** con solo pulsar un botón, definiendo sus dimensiones (1×1 hasta 10×10) mediante un modal interactivo.
+- **Redimensionar** cualquier matriz existente sin perder los valores previos (se rellenan con ceros las nuevas celdas).
+- **Eliminar matrices** con confirmación.
+- **Edición en vivo** de cada celda, con ajuste automático del ancho para números largos (enteros, decimales, negativos).
+- **Panel de operaciones** que incluye:
+  - Suma (A + B)
+  - Resta (A − B)
+  - Multiplicación (A × B)
+  - Multiplicación por escalar (k × A)
+  - Transpuesta (Aᵀ)
+  - Determinante (|A|)
+  - Inversa (A⁻¹)
+- **Visualización clara del resultado** en un panel dedicado, con celdas que se expanden según el tamaño del número.
+- **Guardar resultado** como una nueva matriz para seguir operando.
+- **Interfaz profesional** con iconos SVG, sombras, transiciones suaves y paleta de colores modernos.
+- **Completamente responsive**: adaptado a escritorio, tablet y móvil.
 
-1. Clona o descarga este repositorio.
-2. Abre el archivo `index.html` en cualquier navegador moderno.
-3. Ajusta las filas y columnas si lo deseas (por defecto 2x2).
-4. Usa los botones para añadir o quitar matrices.
-5. Rellena los valores en las celdas de cada matriz.
-6. Presiona **"SUMAR MATRICES"** para ver el resultado de la suma total.
-7. Si modificas algún valor, vuelve a presionar el botón para actualizar el resultado.
+## Ejemplos rápidos
 
-## 🛠️ Tecnologías utilizadas
+- **Suma/Resta**: Crea dos matrices de 2×2, rellénalas y selecciona "Suma (A + B)".
+- **Multiplicación**: Crea una matriz 2×3 y otra 3×2, selecciona "Multiplicación (A × B)".
+- **Determinante**: Crea una matriz cuadrada (ej. 3×3) y elige "Determinante |A|".
+- **Inversa**: Con una matriz cuadrada no singular, obtén su inversa.
 
-- **HTML5**: Estructura semántica y contenedores.
-- **CSS3**: Estilos, Flexbox, diseño responsive con media queries.
-- **JavaScript (ES6)**: Lógica de matrices, manejo del DOM, eventos, conversión de números (coma a punto) y cálculo de suma.
+## Tecnologías utilizadas
 
-## 📄 Licencia
+- **HTML5**: Estructura semántica, modales, SVGs.
+- **CSS3**: Flexbox, Grid, transiciones, animaciones, diseño responsivo.
+- **JavaScript (ES6)**: Manipulación del DOM, eventos, arrays bidimensionales, algoritmos de álgebra lineal (eliminación gaussiana para inversa/determinante).
 
-Este proyecto está bajo la licencia **MIT**. Consulta el archivo `LICENSE` para más detalles.
+## Derechos de autor
 
-## 👤 Autor
+© 2026 **D3B1A2C4F5E67890**. Todos los derechos reservados.
+
+El código fuente y los archivos asociados de este proyecto están protegidos por derechos de autor.  
+Queda prohibida su copia, modificación, distribución o uso sin autorización previa y por escrito del autor.
+
+## Autor
 
 **D3B1A2C4F5E67890**  
-Proyecto desarrollado con fines educativos para demostrar conceptos básicos de programación web: manipulación del DOM, eventos, arrays bidimensionales y diseño responsive.
+Proyecto desarrollado con fines educativos y profesionales, demostrando la potencia de las tecnologías web estándar para construir herramientas matemáticas interactivas.
 
----
 
-✨ *Disfruta sumando matrices de forma sencilla y profesional.*
 
+*Explora el álgebra lineal de forma visual, dinámica y precisa.*
