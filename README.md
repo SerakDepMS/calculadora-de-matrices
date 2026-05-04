@@ -1,4 +1,4 @@
-# Calculadora de Matrices Avanzada
+# Calculadora de Matrices
 
 ![Logo SerakDepMS](image/SerakDepMS.png)
 
@@ -48,6 +48,5 @@ Queda prohibida su copia, modificación, distribución o uso sin autorización p
 **D3B1A2C4F5E67890**  
 Proyecto desarrollado con fines educativos y profesionales, demostrando la potencia de las tecnologías web estándar para construir herramientas matemáticas interactivas.
 
-
-
-*Explora el álgebra lineal de forma visual, dinámica y precisa.*
+*Explora el álgebra lineal de forma visual, dinámica y precisa.*  
+[**🔗 Acceder a la calculadora de matrices**](https://serakdepms.github.io/calculadora-de-matrices/)
